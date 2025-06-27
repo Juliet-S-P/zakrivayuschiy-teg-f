@@ -13,4 +13,199 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  max-inline-size: 700px;
+  background-color: var(--background-color);
+  background-attachment: fixed;
+  background-image: var(--background-image);
+  background-repeat: repeat; 
+  background-size: cover;
+  background-position: center;
+  font-family: var(--main-font), Arial, Helvetica, sans-serif;
+  font-variation-settings: "wght" var(--card-text-font-weight);
+  margin: auto;
+
+
+}
+
+/* хедер */
+.header {
+  margin: 0 auto;
+  min-height: 368px;
+  font-family: var(--accent-font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  border: 2px solid var(--frame-color);
+  margin-block: 100px;
+  background-color: var(--background-color);
+  
+}
+
+.header__logo {
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.header__title {
+  font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* майн */
+.card__item {
+  border: 2px solid var(--frame-color);
+   background-color: var(--background-color);
+   margin-block-end: 50px;
+  
+}
+
+/* заголовок карточки */
+.card__item-title {
+  font-family: var(--main-font), Arial, Helvetica, sans-serif;
+  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  /*тут по макету что в мобилке что в декстопе 18рх*/
+  font-variation-settings: "wght" var(--card-title-font-weight);
+  padding-inline: 10px;
+  padding-block: 3px;
+}
+
+/* картинка в карточке */
+.card__item-image {
+  border-top: 2px solid var(--frame-color);
+  border-bottom: 2px solid var(--frame-color);
+  position: relative;
+
+}
+
+.card-picture {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+  max-height: 696px;
+}
+
+/* фильтры изображений */
+.image-filter-contrast {
+  filter: contrast(20%);
+}
+.image-filter-blur {
+  filter: blur(0.5rem);
+}
+
+.image-filter-grayscale {
+  filter: grayscale(1);
+}
+
+.image-filter-saturate {
+  filter: saturate(180%);
+}
+
+.image-filter-hue-rotate {
+filter: hue-rotate(-50deg);
+}
+
+.image-filter-sepia {
+filter: sepia(60%);
+}
+
+.image-filter-multiple {
+filter: brightness(1.5) sepia(30%) invert(0.8);
+}
+
+
+/* лейбел нв картинке*/
+.card-label {
+  position: absolute;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  display: block;
+  color: transparent;
+  text-transform: uppercase;
+  mix-blend-mode: hard-light;
+  opacity: 0.5;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 1px #000000;
+  inset-block-start: 27px;
+  inset-inline-end: 24px;
+  text-shadow: var(--label-shadow);
+}
+
+@supports (text-stroke: 1px #000000) {
+  .card-label {
+    text-stroke: 1px #000000;
+  }
+}
+
+.card__item-content {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  padding: 25px;
+}
+
+.card-text {
+  font-family: var(--main-font), Arial, Helvetica, sans-serif;
+  font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+  /*тут по макету что в мобилке что в декстопе 18рх*/
+  font-variation-settings: "wght" var(--card-text-font-weight);
+
+}
+
+/* кнопки */
+.card__item-button {
+  display: flex;
+  justify-content: end;
+  gap: 6px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+
+.button {
+  border: 2px solid var(--frame-color);
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--accent-font);
+  font-variation-settings: "wght" var(--card-text-font-weight);
+}
+
+/* кнопка сердца */
+.card__icon-button {
+  border: none;
+  background-color: transparent;
+}
+
+.like-icon {}
+
+/* кнопка лайка */
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+/* футер */
+
+.footer {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-bottom: 100px;
+}
+
+.save-button {
+  inline-size: 339px;
+    block-size: 55px;
+    gap: 8px;
+
 }

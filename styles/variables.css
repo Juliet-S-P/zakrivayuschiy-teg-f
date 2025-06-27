@@ -1,1 +1,36 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font: "Inter-Variable", "Arial", sans-serif;
+    /* Основной шрифт текста*/
+    --accent-font: "PressStart2P-Regular", "Arial", sans-serif;
+    /* Акцентный шрифт текста*/
+    --card-title-font-weight: 700;
+    /* Толщина текста заголовка карточки*/
+    --card-text-font-weight: 400;
+    /* Толщина текста карточки*/
+    --background-color: #FFFFFF;
+    /* Цвет страницы*/
+    --header-logo-color: #000000;
+    /* Цвет названия сайта*/
+    --header-title-color: #000000;
+    /* Цвет заголовка сайта*/
+    --article-title-color: #000000;
+    /* Цвет текста заголовка карточки*/
+    --text-color: #000000;
+    /* цвет текста параграфов */
+    --frame-color: #000000;
+    /* цвет рамки */
+    --label-shadow: -1px 0 rgba(255, 255, 255, 1),
+        0 1px rgba(255, 255, 255, 1),
+        1px 0 rgba(255, 255, 255, 1),
+        0 -1px rgba(255, 255, 255, 1);
+    --background-image:
+        repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+        repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+        linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+
+
+
+
+    /* еще добавим переменные*/
+}
