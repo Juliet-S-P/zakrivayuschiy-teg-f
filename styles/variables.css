@@ -24,10 +24,24 @@
         0 1px rgba(255, 255, 255, 1),
         1px 0 rgba(255, 255, 255, 1),
         0 -1px rgba(255, 255, 255, 1);
+    /* цвет лэйбла*/
     --background-image:
         repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
         repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
         linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+    /* фон страницы */
+    --button-text-color: #FFFFFF; 
+    /* цвет текста кнопки заменила на белый т.к. применен mix-blend-mode: difference; */
+    --color-heart-contur: #000000;
+    /* фцвет контура сердца */
+    --color-heart-main-body: red;
+    /* цвет сердца тело */
+    --color-heart-core: white;
+    /* цвет центра сердца */
+    --animation-fill-color: red;
+    /* цвет всплесков сердца */
+    --color-filling-button: #000000;
+
 
 
 
