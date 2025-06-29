@@ -23,8 +23,6 @@
   font-family: var(--main-font), Arial, Helvetica, sans-serif;
   font-variation-settings: "wght" var(--card-text-font-weight);
   margin: auto;
-
-
 }
 
 /* хедер */
@@ -41,7 +39,6 @@
   border: 2px solid var(--frame-color);
   margin-block: 100px;
   background-color: var(--background-color);
-
 }
 
 .header__logo {
@@ -61,7 +58,6 @@
   border: 2px solid var(--frame-color);
   background-color: var(--background-color);
   margin-block-end: 50px;
-
 }
 
 /* заголовок карточки */
@@ -79,7 +75,6 @@
   border-top: 2px solid var(--frame-color);
   border-bottom: 2px solid var(--frame-color);
   position: relative;
-
 }
 
 .card-picture {
@@ -144,6 +139,7 @@
     text-stroke: 1px #000000;
   }
 }
+
 /* див для параграфов в карточке */
 .card__item-content {
   display: flex;
@@ -158,7 +154,6 @@
   font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
   /*тут по макету что в мобилке что в декстопе 18рх*/
   font-variation-settings: "wght" var(--card-text-font-weight);
-
 }
 
 /* див у кнопок карточек */
@@ -180,7 +175,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  position: relative; 
+  position: relative;
   overflow: hidden;
 }
 
@@ -216,7 +211,6 @@
   block-size: 38px;
 }
 
-
 /* текст кнопки */
 .button__text {
   font-family: var(--accent-font);
@@ -241,99 +235,7 @@
   opacity: 0;
 }
 
-/* иконка сердца: ее состояния и анимация ПЕРЕНЕСИТИ ПОТОМ В АНИМАЦИИ! */
-.like-icon:hover .core {
-  fill: var(--color-heart-contur);
-  transition-duration: 0.3s;
-  transition-delay: 0s;
-}
-
-.like-icon:hover .main-body {
-  fill: var(--color-heart-contur);
-  transition-duration: 0.3s;
-  transition-delay: 0.03s;
-}
-
-.like-icon:not(:hover) .core {
-  fill: transparent;
-  transition-duration: 0.3s;
-  transition-delay: 0.03s;
-}
-
-.like-icon:not(:hover) .main-body {
-  fill: transparent;
-  transition-duration: 0.3s;
-  transition-delay: 0s;
-}
-
-.like-icon:active .core {
-  fill: var(--animation-fill-color);
-  transition-duration: 0.3s;
-  transition-delay: 0s;
-}
-
-.like-icon:active .main-body {
-  fill: var(--animation-fill-color);
-  transition-duration: 0.3s;
-  transition-delay: 0.03s;
-}
-
-.like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
-  transition-delay: 0s;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
-  transition-delay: 0.03s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
-  transition-delay: 0.06s;
-  transition-duration: 0.3s;
-}
-
-.like-icon:not(.is-liked) .contour {
-  transition-delay: 0s;
-  transition-duration: 0.1s;
-  transition-timing-function: linear;
-}
-.like-icon.is-liked .heart {
-  animation: rice-heart 0.3s ease-in 0.1s forwards;
-  transform-origin: center;
-}
-@keyframes rice-heart {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.25);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.like-icon.is-liked .sparks {
-  opacity: 1;
-  animation: appearance-sparks 0.3s ease-in 0.3s forwards;
-}
-@keyframes appearance-sparks {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-
 /* футер */
-
 .footer {
   display: flex;
   flex-direction: column;
@@ -341,6 +243,7 @@
   align-items: center;
   margin-bottom: 100px;
 }
+
 /* кнопка сохранить на память */
 .save-button {
   inline-size: 339px;
@@ -354,10 +257,65 @@
   width: 21px;
   height: 21px;
   color: var(--button-text-color);
-  /* mix-blend-mode: difference; */
+  mix-blend-mode: difference;
+}
+
+.popup {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  inline-size: 357px;
+  padding: 30px;
+}
+
+.popup::backdrop {
+  opacity: 0.8;
+  background-color: #000000;
+}
+
+
+.popup[open] {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  line-height: 150%;
 }
 
 .floppy-big {
   width: 39px;
   height: 39px;
+}
+
+.button-close {
+  text-transform: uppercase;
+  inline-size: 100%;
+  margin-block-start: 30px;
+  padding-block-end: 10px;
+  padding-block-start: 10px;
+
+}
+
+
+@media (width <=375px) {
+  .card__item {
+    margin-block-end: 35px;
+  }
+
+  .card__item-content {
+    gap: 15px;
+  }
+
+  .card__item-button {
+    gap: 0px;
+  }
+
+  .card-picture {
+    max-height: 375px;
+  }
+
 }
