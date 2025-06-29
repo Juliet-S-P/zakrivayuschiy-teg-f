@@ -318,4 +318,15 @@
     max-height: 375px;
   }
 
+  .card-label {
+    inset-block-start: 24px;
+    inset-inline-end: 10px;
+
+  }
+
+  .floppy-svg {
+    width: 28px;
+    height: 28px;
+  }
+
 }
