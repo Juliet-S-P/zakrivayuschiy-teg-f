@@ -2,7 +2,7 @@
 :root {
     --main-font: "Inter-Variable", "Arial", sans-serif;
     /* Основной шрифт текста*/
-    --accent-font: "PressStart2P-Regular", "Arial", sans-serif;
+    --accent-font: "PressStart2P", "Arial", sans-serif;
     /* Акцентный шрифт текста*/
     --card-title-font-weight: 700;
     /* Толщина текста заголовка карточки*/

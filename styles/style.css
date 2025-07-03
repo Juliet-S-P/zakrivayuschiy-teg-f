@@ -28,7 +28,6 @@
 /* хедер */
 .header {
   margin: 0 auto;
-  min-height: 368px;
   font-family: var(--accent-font);
   display: flex;
   flex-direction: column;
@@ -45,19 +44,23 @@
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   font-weight: 400;
   text-transform: uppercase;
+  padding-block-start: clamp(7.5rem, 7.324rem + 0.751vw, 8rem);
+  /* добавила паддинги, т.к. убрала min-height: 368px у header*/
 }
 
 .header__title {
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
   font-weight: 400;
   text-transform: uppercase;
+  padding-block-end: clamp(7.5rem, 7.324rem + 0.751vw, 8rem);
+  /* добавила паддинги, т.к. убрала min-height: 368px  у header*/
 }
 
 /* майн */
 .card__item {
   border: 2px solid var(--frame-color);
   background-color: var(--background-color);
-  margin-block-end: 50px;
+  margin-block-end: 49px;
 }
 
 /* заголовок карточки */
@@ -66,14 +69,13 @@
   font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
   /*тут по макету что в мобилке что в декстопе 18рх*/
   font-variation-settings: "wght" var(--card-title-font-weight);
-  padding-inline: 10px;
-  padding-block: 3px;
+  padding-inline: 11px;
+  padding-block: 4px;
+  border-block-end: 2px solid var(--frame-color);
 }
 
 /* картинка в карточке */
 .card__item-image {
-  border-top: 2px solid var(--frame-color);
-  border-bottom: 2px solid var(--frame-color);
   position: relative;
 }
 
@@ -81,9 +83,8 @@
   object-fit: cover;
   object-position: center;
   inline-size: 100%;
-  block-size: 100%;
+  aspect-ratio: 1/1;
   display: block;
-  max-height: 696px;
 }
 
 /* фильтры изображений */
@@ -115,7 +116,6 @@
   filter: brightness(1.5) sepia(30%) invert(0.8);
 }
 
-
 /* лейбел в картинке*/
 .card-label {
   position: absolute;
@@ -137,15 +137,17 @@
 @supports (text-stroke: 1px #000000) {
   .card-label {
     text-stroke: 1px #000000;
+    text-shadow: none;
   }
 }
 
 /* див для параграфов в карточке */
 .card__item-content {
   display: flex;
-  gap: 26px;
+  gap: 30px;
   flex-direction: column;
   padding: 25px;
+  border-block-start: 2px solid var(--frame-color);
 }
 
 /* текст параграфов */
@@ -154,13 +156,13 @@
   font-size: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
   /*тут по макету что в мобилке что в декстопе 18рх*/
   font-variation-settings: "wght" var(--card-text-font-weight);
+  line-height: 21px;
 }
 
 /* див у кнопок карточек */
 .card__item-button {
   display: flex;
   justify-content: end;
-  gap: 6px;
   padding-right: 25px;
   padding-bottom: 25px;
 }
@@ -177,6 +179,7 @@
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 
 .button::before {
@@ -196,13 +199,13 @@
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 var(--color-filling-button);
-  transition: box-shadow 0.3s ease;
 }
 
 /* кнопка сердца */
 .card__icon-button {
   border: none;
   background-color: transparent;
+  block-size: 38px;
 }
 
 /* кнопка likе*/
@@ -226,22 +229,17 @@
   height: 36px;
 }
 
-.main-body,
-.core {
-  fill: none;
-}
-
 .sparks {
   opacity: 0;
 }
 
-/* футер */
-.footer {
+/* кнопки сохранить на память и модальное окно */
+.save {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  margin-block-end: 100px;
 }
 
 /* кнопка сохранить на память */
@@ -269,7 +267,7 @@
 }
 
 .popup::backdrop {
-  opacity: 0.8;
+  opacity: 0.75;
   background-color: #000000;
 }
 
@@ -280,9 +278,11 @@
 }
 
 .popup-content {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
   line-height: 150%;
 }
 
@@ -300,14 +300,13 @@
 
 }
 
-
 @media (width <=375px) {
   .card__item {
-    margin-block-end: 35px;
+    margin-block-end: 50px;
   }
 
   .card__item-content {
-    gap: 15px;
+    gap: 27px;
   }
 
   .card__item-button {
@@ -322,6 +321,17 @@
     inset-block-start: 24px;
     inset-inline-end: 10px;
 
+  }
+
+  .save-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    inline-size: 306px;
+    block-size: 84px;
+    padding: 0;
+    gap: 10px;
   }
 
   .floppy-svg {
