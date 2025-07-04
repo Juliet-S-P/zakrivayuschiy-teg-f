@@ -60,7 +60,7 @@
 .card__item {
   border: 2px solid var(--frame-color);
   background-color: var(--background-color);
-  margin-block-end: 49px;
+  margin-block-end: 50px;
 }
 
 /* заголовок карточки */
@@ -144,7 +144,7 @@
 /* див для параграфов в карточке */
 .card__item-content {
   display: flex;
-  gap: 30px;
+  gap: 27px;
   flex-direction: column;
   padding: 25px;
   border-block-start: 2px solid var(--frame-color);
@@ -165,6 +165,7 @@
   justify-content: end;
   padding-right: 25px;
   padding-bottom: 25px;
+  gap: 3px;
 }
 
 /* общий клас кнопок */
@@ -203,9 +204,21 @@
 
 /* кнопка сердца */
 .card__icon-button {
-  border: none;
+  border: 2px solid transparent;
   background-color: transparent;
   block-size: 38px;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--frame-color);
 }
 
 /* кнопка likе*/
@@ -219,7 +232,7 @@
   font-family: var(--accent-font);
   font-size: 14px;
   color: white;
-  font-variation-settings: "wght" var(--card-text-font-weight);
+  font-weight: 400;
   mix-blend-mode: difference;
 }
 
@@ -289,6 +302,8 @@
 .floppy-big {
   width: 39px;
   height: 39px;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
 }
 
 .button-close {
@@ -297,7 +312,6 @@
   margin-block-start: 30px;
   padding-block-end: 10px;
   padding-block-start: 10px;
-
 }
 
 @media (width <=375px) {
@@ -310,17 +324,12 @@
   }
 
   .card__item-button {
-    gap: 0px;
-  }
-
-  .card-picture {
-    max-height: 375px;
+    gap: 4px;
   }
 
   .card-label {
     inset-block-start: 24px;
     inset-inline-end: 10px;
-
   }
 
   .save-button {
@@ -337,6 +346,14 @@
   .floppy-svg {
     width: 28px;
     height: 28px;
+  }
+
+  .popup {
+    padding: 30px 42px;
+  }
+
+  .popup-content {
+    gap: 18px;
   }
 
 }
